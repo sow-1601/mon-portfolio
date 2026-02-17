@@ -35,8 +35,16 @@
 <script>
   const btn = document.getElementById("menu-btn");
   const menu = document.getElementById("menu");
+  const links = menu.querySelectorAll("a");
   btn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
+  });
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      if (!menu.classList.contains("hidden")) {
+        menu.classList.add("hidden");
+      }
+    });
   });
 </script>
 
